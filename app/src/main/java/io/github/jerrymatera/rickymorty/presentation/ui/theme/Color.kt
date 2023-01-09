@@ -1,4 +1,4 @@
-package io.github.jerrymatera.rickymorty.ui.theme
+package io.github.jerrymatera.rickymorty.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
