@@ -1,4 +1,4 @@
-package io.github.jerrymatera.rickymorty.data.models
+package io.github.jerrymatera.rickymorty.data.models.characters
 
 
 data class Character(
