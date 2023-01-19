@@ -30,7 +30,7 @@ fun CharacterCard(character: Character) {
                 modifier = Modifier.height(24.dp)
             )
             Text(
-                text = "First seen in: ${character.episode.last()}"
+                text = "First seen in: ${character.episode.first()}"
             )
         }
     }
