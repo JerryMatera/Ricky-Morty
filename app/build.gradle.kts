@@ -65,6 +65,11 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview:$compose_ui_version")
     implementation("androidx.compose.material:material:1.3.1")
 
+    // Navigation
+    val nav_version = "2.5.3"
+    implementation("androidx.navigation:navigation-compose:$nav_version")
+    implementation("io.coil-kt:coil-compose:2.2.2")
+
 
     // kotlinx.coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
