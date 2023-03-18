@@ -15,7 +15,7 @@ import io.github.jerrymatera.rickymorty.presentation.ui.theme.RickyMortyTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        installSplashScreen().setKeepOnScreenCondition { true }
+        installSplashScreen()
         super.onCreate(savedInstanceState)
         setContent {
             RickyMortyTheme {
