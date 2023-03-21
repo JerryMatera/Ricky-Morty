@@ -1,18 +1,18 @@
 package io.github.jerrymatera.rickymorty.data.remote
 
+import com.skydoves.sandwich.ApiResponse
 import io.github.jerrymatera.rickymorty.data.models.characters.CharactersResponse
 import io.github.jerrymatera.rickymorty.data.models.episodes.EpisodeResponse
 import io.github.jerrymatera.rickymorty.data.models.locations.LocationResponse
-import io.github.jerrymatera.rickymorty.utils.NetworkResult
 import retrofit2.http.GET
 
 interface RickyMortyService {
     @GET("/characters")
-    suspend fun getCharacters() : NetworkResult<CharactersResponse>
+    suspend fun getCharacters() : ApiResponse<CharactersResponse>
 
     @GET("/location")
-    suspend fun getLocations() : NetworkResult<LocationResponse>
+    suspend fun getLocations() : ApiResponse<LocationResponse>
 
     @GET("/episode")
-    suspend fun getEpisodes(): NetworkResult<EpisodeResponse>
+    suspend fun getEpisodes(): ApiResponse<EpisodeResponse>
 }
