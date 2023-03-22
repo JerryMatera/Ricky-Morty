@@ -1,7 +1,7 @@
 package io.github.jerrymatera.rickymorty.utils
 
-sealed class NetworkResult<T : Any> {
-    class Success<T: Any>(val data: T) : NetworkResult<T>()
-    class Error<T: Any>(val code: Int, val message: String?) : NetworkResult<T>()
-    class Exception<T: Any>(val e: Throwable) : NetworkResult<T>()
+sealed class NetworkResult<T>(val data: T? = null, val message: String? = null) {
+    class Success<T>( data: T) : NetworkResult<T>(data)
+    class Loading<T>( data: T? = null) : NetworkResult<T>(data)
+    class Error<T>(message: String, data: T? = null) : NetworkResult<T>(data, message)
 }
