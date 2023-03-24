@@ -5,9 +5,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import io.github.jerrymatera.rickymorty.presentation.ui.characters.CharactersScreen
-import io.github.jerrymatera.rickymorty.presentation.ui.episode.EpisodesScreen
-import io.github.jerrymatera.rickymorty.presentation.ui.location.LocationsScreen
+import io.github.jerrymatera.rickymorty.presentation.characters.CharactersScreen
+import io.github.jerrymatera.rickymorty.presentation.episode.EpisodesScreen
+import io.github.jerrymatera.rickymorty.presentation.location.LocationsScreen
 
 @Composable
 fun BottomNavGraph(modifier: Modifier, navController: NavHostController) {

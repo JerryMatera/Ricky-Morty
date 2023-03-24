@@ -1,4 +1,4 @@
-package io.github.jerrymatera.rickymorty.presentation.ui.characters
+package io.github.jerrymatera.rickymorty.presentation.characters
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import io.github.jerrymatera.rickymorty.data.models.characters.Character

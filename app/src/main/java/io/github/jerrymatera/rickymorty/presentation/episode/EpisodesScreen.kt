@@ -1,4 +1,4 @@
-package io.github.jerrymatera.rickymorty.presentation.ui.episode
+package io.github.jerrymatera.rickymorty.presentation.episode
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

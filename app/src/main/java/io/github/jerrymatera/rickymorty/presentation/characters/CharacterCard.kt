@@ -1,4 +1,4 @@
-package io.github.jerrymatera.rickymorty.presentation.ui.characters
+package io.github.jerrymatera.rickymorty.presentation.characters
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
