@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import io.github.jerrymatera.rickymorty.presentation.ui.MainScreen
+import io.github.jerrymatera.rickymorty.presentation.screen.MainScreen
 import io.github.jerrymatera.rickymorty.presentation.ui.theme.RickyMortyTheme
 
 class MainActivity : ComponentActivity() {

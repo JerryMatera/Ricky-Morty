@@ -2,7 +2,7 @@ package io.github.jerrymatera.rickymorty.data.repository
 
 import com.skydoves.sandwich.ApiResponse
 import com.skydoves.sandwich.message
-import io.github.jerrymatera.rickymorty.data.models.locations.LocationResponse
+import io.github.jerrymatera.rickymorty.data.remote.models.locations.LocationResponse
 import io.github.jerrymatera.rickymorty.data.remote.RickyMortyService
 import io.github.jerrymatera.rickymorty.utils.NetworkResult
 import kotlinx.coroutines.Dispatchers
