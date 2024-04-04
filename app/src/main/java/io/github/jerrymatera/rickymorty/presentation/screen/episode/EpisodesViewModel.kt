@@ -16,7 +16,7 @@ class EpisodesViewModel @Inject constructor(
     private val episodesRepository: EpisodesRepository
 ) : ViewModel() {
     private val _episodesScreenUiState = MutableStateFlow(EpisodesScreenState())
-    val episodesScreenUiState: StateFlow<EpisodesScreenState> = _episodesScreenUiState.asStateFlow()
+    val episodesScreenUiState: StateFlow<EpisodesScreenState>  get() = _episodesScreenUiState.asStateFlow()
 
     init {
         episodesResponse()

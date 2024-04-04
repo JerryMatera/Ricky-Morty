@@ -84,6 +84,7 @@ dependencies {
 
     // Sandwich
     implementation(libs.sandwich)
+    implementation(libs.sandwich.retrofit)
 
     // pagination
     implementation(libs.androidx.paging.compose)
