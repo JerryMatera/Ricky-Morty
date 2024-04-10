@@ -2,12 +2,20 @@ package io.github.jerrymatera.rickymorty.presentation.screen
 
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.BottomNavigation
+import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.List
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -15,7 +23,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import io.github.jerrymatera.rickymorty.presentation.navigation.BottomNavGraph
-import io.github.jerrymatera.rickymorty.presentation.navigation.BottomNavScreen
+import io.github.jerrymatera.rickymorty.presentation.navigation.DestinationRoutes
 
 @Composable
 fun MainScreen() {
@@ -32,10 +40,10 @@ fun MainScreen() {
 
 @Composable
 fun BottomBar(navController: NavHostController) {
-    val screens = listOf<BottomNavScreen>(
-        BottomNavScreen.Home,
-        BottomNavScreen.Episodes,
-        BottomNavScreen.Locations
+    val screens = listOf(
+        DestinationRoutes.Characters to Icons.Default.Home,
+        DestinationRoutes.Episodes to Icons.AutoMirrored.Filled.List,
+        DestinationRoutes.Locations to Icons.Default.LocationOn
     )
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -54,20 +62,20 @@ fun BottomBar(navController: NavHostController) {
 
 @Composable
 fun RowScope.AddItem(
-    screen: BottomNavScreen,
+    screen: Pair<DestinationRoutes, ImageVector>,
     currentDestination: NavDestination?,
     navController: NavHostController
 ) {
     BottomNavigationItem(
         label = {
-            Text(text = screen.title)
+            Text(text = stringResource(screen.first.title))
         },
         icon = {
-            Icon(imageVector = screen.icon, contentDescription = "")
+            Icon(imageVector = screen.second, contentDescription = "")
         },
-        selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
+        selected = currentDestination?.hierarchy?.any { it.route == screen.first.route } == true,
         onClick = {
-            navController.navigate(screen.route) {
+            navController.navigate(screen.first.route) {
                 popUpTo(navController.graph.findStartDestination().id)
                 launchSingleTop = true
             }

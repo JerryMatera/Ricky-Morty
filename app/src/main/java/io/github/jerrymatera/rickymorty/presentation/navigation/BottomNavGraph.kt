@@ -14,15 +14,15 @@ fun BottomNavGraph(modifier: Modifier, navController: NavHostController) {
     NavHost(
         modifier = modifier,
         navController = navController,
-        startDestination = BottomNavScreen.Home.route
+        startDestination = DestinationRoutes.Characters.route
     ) {
-        composable(route = BottomNavScreen.Home.route) {
+        composable(route = DestinationRoutes.Characters.route) {
             CharactersScreen()
         }
-        composable(route = BottomNavScreen.Episodes.route) {
+        composable(route = DestinationRoutes.Episodes.route) {
             EpisodesScreen()
         }
-        composable(route = BottomNavScreen.Locations.route) {
+        composable(route = DestinationRoutes.Locations.route) {
             LocationsScreen()
         }
     }
