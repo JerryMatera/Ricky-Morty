@@ -2,8 +2,9 @@ package io.github.jerrymatera.rickymorty.data.repository
 
 import com.skydoves.sandwich.ApiResponse
 import com.skydoves.sandwich.message
-import io.github.jerrymatera.rickymorty.data.remote.models.characters.CharactersResponse
 import io.github.jerrymatera.rickymorty.data.remote.RickyMortyService
+import io.github.jerrymatera.rickymorty.data.remote.models.dto.characters.CharactersResponseDto
+import io.github.jerrymatera.rickymorty.domain.repository.CharactersRepository
 import io.github.jerrymatera.rickymorty.utils.NetworkResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -13,7 +14,7 @@ import javax.inject.Inject
 
 class CharactersRepositoryImpl @Inject constructor(private val rickyMortyService: RickyMortyService) :
     CharactersRepository {
-    override suspend fun getCharacters(): Flow<NetworkResult<CharactersResponse>> = flow {
+    override suspend fun getCharacters(): Flow<NetworkResult<CharactersResponseDto>> = flow {
         emit(NetworkResult.Loading())
         when (val response = rickyMortyService.getCharacters()) {
             is ApiResponse.Success -> {

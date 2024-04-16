@@ -6,6 +6,9 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import io.github.jerrymatera.rickymorty.data.remote.RickyMortyService
 import io.github.jerrymatera.rickymorty.data.repository.*
+import io.github.jerrymatera.rickymorty.domain.repository.CharactersRepository
+import io.github.jerrymatera.rickymorty.domain.repository.EpisodesRepository
+import io.github.jerrymatera.rickymorty.domain.repository.LocationsRepository
 import javax.inject.Singleton
 
 @Module

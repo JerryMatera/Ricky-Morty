@@ -75,6 +75,7 @@ dependencies {
 
     // hilt
     implementation(libs.hilt.android)
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     kapt(libs.hilt.android.compiler)
 
     // retrofit

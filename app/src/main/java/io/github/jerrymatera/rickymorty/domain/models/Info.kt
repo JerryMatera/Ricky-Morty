@@ -1,4 +1,4 @@
-package io.github.jerrymatera.rickymorty.data.remote.models
+package io.github.jerrymatera.rickymorty.domain.models
 
 data class Info(
     val count: Int,

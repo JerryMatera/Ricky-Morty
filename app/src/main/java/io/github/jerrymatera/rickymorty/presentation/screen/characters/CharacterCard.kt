@@ -7,15 +7,12 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import io.github.jerrymatera.rickymorty.data.remote.models.characters.Character
-import io.github.jerrymatera.rickymorty.presentation.ui.theme.RickyMortyTheme
+import io.github.jerrymatera.rickymorty.data.remote.models.dto.characters.CharacterDto
 
 @Composable
-fun CharacterCard(character: Character) {
+fun CharacterCard(character: CharacterDto) {
     Row(
         modifier = Modifier.height(65.dp)
     ) {
@@ -38,13 +35,5 @@ fun CharacterCard(character: Character) {
                 text = "First seen in: ${character.episode.first()}"
             )
         }
-    }
-}
-
-@Preview(showSystemUi = true)
-@Composable
-fun CharacterCardPreview(@PreviewParameter(CharacterProvider::class) character: Character) {
-    RickyMortyTheme {
-        CharacterCard(character = character)
     }
 }

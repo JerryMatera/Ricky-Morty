@@ -3,7 +3,7 @@ package io.github.jerrymatera.rickymorty.presentation.screen.episode
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.jerrymatera.rickymorty.data.repository.EpisodesRepository
+import io.github.jerrymatera.rickymorty.domain.repository.EpisodesRepository
 import io.github.jerrymatera.rickymorty.utils.NetworkResult
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

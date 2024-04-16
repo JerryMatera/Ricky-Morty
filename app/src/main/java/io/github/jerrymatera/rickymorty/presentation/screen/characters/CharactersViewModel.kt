@@ -1,10 +1,12 @@
 package io.github.jerrymatera.rickymorty.presentation.screen.characters
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import io.github.jerrymatera.rickymorty.data.repository.CharactersRepository
+import io.github.jerrymatera.rickymorty.domain.repository.CharactersRepository
 import io.github.jerrymatera.rickymorty.utils.NetworkResult
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -27,7 +29,7 @@ class CharactersViewModel @Inject constructor(
         _charactersScreenUiState.value = charactersScreenState.value.copy(
             isLoading = true
         )
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             charactersRepository.getCharacters().collect() { response ->
                 when (response) {
                     is NetworkResult.Error -> {
@@ -37,15 +39,18 @@ class CharactersViewModel @Inject constructor(
                             error = response.message.toString()
                         )
                     }
+
                     is NetworkResult.Loading -> {
                         _charactersScreenUiState.value =
                             charactersScreenState.value.copy(isLoading = true)
                     }
+
                     is NetworkResult.Success -> {
                         _charactersScreenUiState.value = charactersScreenState.value.copy(
                             isLoading = false,
-                            charactersResponse = response.data?.results
+                            charactersResponse = response.data?.results ?: emptyList()
                         )
+                        Log.i("character viewmodel", "${response.data}")
                     }
                 }
             }

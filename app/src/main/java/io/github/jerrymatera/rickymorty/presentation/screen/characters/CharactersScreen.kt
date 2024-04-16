@@ -1,20 +1,18 @@
 package io.github.jerrymatera.rickymorty.presentation.screen.characters
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun CharactersScreen() {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+fun CharactersScreen(state: CharacterScreenState) {
+    LazyColumn(
+        modifier = Modifier.fillMaxSize()
     ) {
-        Text("Characters Screen")
+        items(state.charactersResponse){ character ->
+            CharacterCard(character = character)
+        }
     }
 }
