@@ -61,7 +61,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation(libs.compose.material)
+//    implementation(libs.compose.material)
     // Navigation
     implementation(libs.navigation.compose)
     implementation(libs.coil.compose)
@@ -75,7 +75,7 @@ dependencies {
 
     // hilt
     implementation(libs.hilt.android)
-    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    implementation(libs.androidx.hilt.navigation.compose)
     kapt(libs.hilt.android.compiler)
 
     // retrofit
