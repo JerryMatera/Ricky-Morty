@@ -21,39 +21,37 @@ class CharactersViewModel @Inject constructor(
     val charactersScreenState: StateFlow<CharacterScreenState> =
         _charactersScreenUiState.asStateFlow()
 
-    init {
-        charactersResponse()
-    }
-
-    private fun charactersResponse() {
+    private fun charactersResponse() = viewModelScope.launch(Dispatchers.IO) {
         _charactersScreenUiState.value = charactersScreenState.value.copy(
             isLoading = true
         )
-        viewModelScope.launch(Dispatchers.IO) {
-            charactersRepository.getCharacters().collect() { response ->
-                when (response) {
-                    is NetworkResult.Error -> {
-                        _charactersScreenUiState.value = charactersScreenState.value.copy(
-                            charactersResponse = emptyList(),
-                            isLoading = false,
-                            error = response.message.toString()
-                        )
-                    }
+        charactersRepository.getCharacters().collect() { response ->
+            when (response) {
+                is NetworkResult.Error -> {
+                    _charactersScreenUiState.value = charactersScreenState.value.copy(
+                        charactersResponse = emptyList(),
+                        isLoading = false,
+                        error = response.message.toString()
+                    )
+                }
 
-                    is NetworkResult.Loading -> {
-                        _charactersScreenUiState.value =
-                            charactersScreenState.value.copy(isLoading = true)
-                    }
+                is NetworkResult.Loading -> {
+                    _charactersScreenUiState.value =
+                        charactersScreenState.value.copy(isLoading = true)
+                }
 
-                    is NetworkResult.Success -> {
-                        _charactersScreenUiState.value = charactersScreenState.value.copy(
-                            isLoading = false,
-                            charactersResponse = response.data?.results ?: emptyList()
-                        )
-                        Log.i("character viewmodel", "${response.data}")
-                    }
+                is NetworkResult.Success -> {
+                    _charactersScreenUiState.value = charactersScreenState.value.copy(
+                        isLoading = false,
+                        charactersResponse = response.data?.results ?: emptyList()
+                    )
+                    Log.i("character viewmodel", "${response.data}")
                 }
             }
         }
+    }
+
+    init {
+        charactersResponse()
     }
 }

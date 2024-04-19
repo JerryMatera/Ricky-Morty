@@ -7,12 +7,12 @@ import io.github.jerrymatera.rickymorty.data.remote.models.dto.locations.Locatio
 import retrofit2.http.GET
 
 interface RickyMortyService {
-    @GET("/characters")
+    @GET("character")
     suspend fun getCharacters() : ApiResponse<CharactersResponseDto>
 
-    @GET("/location")
+    @GET("location")
     suspend fun getLocations() : ApiResponse<LocationResponseDto>
 
-    @GET("/episode")
+    @GET("episode")
     suspend fun getEpisodes(): ApiResponse<EpisodeResponseDto>
 }

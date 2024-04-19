@@ -1,5 +1,6 @@
 package io.github.jerrymatera.rickymorty.data.repository
 
+import android.util.Log
 import com.skydoves.sandwich.ApiResponse
 import com.skydoves.sandwich.message
 import io.github.jerrymatera.rickymorty.data.remote.RickyMortyService
@@ -19,15 +20,20 @@ class CharactersRepositoryImpl @Inject constructor(private val rickyMortyService
         when (val response = rickyMortyService.getCharacters()) {
             is ApiResponse.Success -> {
                 val charactersResponse = response.data
+                Log.i("Character Success", charactersResponse.toString())
                 emit(NetworkResult.Success(data = charactersResponse))
             }
+
             is ApiResponse.Failure.Error -> {
+                Log.i("Character Failure", response.message())
+
                 emit(
                     NetworkResult.Error(
                         message = response.message()
                     )
                 )
             }
+
             is ApiResponse.Failure.Exception -> {
                 emit(
                     NetworkResult.Error(
