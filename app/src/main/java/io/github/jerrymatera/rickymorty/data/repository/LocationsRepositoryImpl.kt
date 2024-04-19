@@ -2,7 +2,7 @@ package io.github.jerrymatera.rickymorty.data.repository
 
 import com.skydoves.sandwich.ApiResponse
 import com.skydoves.sandwich.message
-import io.github.jerrymatera.rickymorty.data.remote.models.dto.locations.LocationResponseDto
+import io.github.jerrymatera.rickymorty.data.remote.dto.locations.LocationResponseDto
 import io.github.jerrymatera.rickymorty.data.remote.RickyMortyService
 import io.github.jerrymatera.rickymorty.domain.repository.LocationsRepository
 import io.github.jerrymatera.rickymorty.utils.NetworkResult

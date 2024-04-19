@@ -1,6 +1,6 @@
 package io.github.jerrymatera.rickymorty.presentation.screen.episode
 
-import io.github.jerrymatera.rickymorty.data.remote.models.dto.episodes.EpisodeDto
+import io.github.jerrymatera.rickymorty.data.remote.dto.episodes.EpisodeDto
 
 data class EpisodesScreenState(
     val episodeResponse:  List<EpisodeDto>? = emptyList(),

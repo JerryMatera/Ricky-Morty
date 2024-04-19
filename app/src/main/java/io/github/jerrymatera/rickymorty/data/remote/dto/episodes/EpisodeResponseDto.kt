@@ -1,4 +1,4 @@
-package io.github.jerrymatera.rickymorty.data.remote.models.dto.episodes
+package io.github.jerrymatera.rickymorty.data.remote.dto.episodes
 
 import io.github.jerrymatera.rickymorty.domain.models.Info
 

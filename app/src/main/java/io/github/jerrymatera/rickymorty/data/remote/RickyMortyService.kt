@@ -1,9 +1,9 @@
 package io.github.jerrymatera.rickymorty.data.remote
 
 import com.skydoves.sandwich.ApiResponse
-import io.github.jerrymatera.rickymorty.data.remote.models.dto.characters.CharactersResponseDto
-import io.github.jerrymatera.rickymorty.data.remote.models.dto.episodes.EpisodeResponseDto
-import io.github.jerrymatera.rickymorty.data.remote.models.dto.locations.LocationResponseDto
+import io.github.jerrymatera.rickymorty.data.remote.dto.characters.CharactersResponseDto
+import io.github.jerrymatera.rickymorty.data.remote.dto.episodes.EpisodeResponseDto
+import io.github.jerrymatera.rickymorty.data.remote.dto.locations.LocationResponseDto
 import retrofit2.http.GET
 
 interface RickyMortyService {

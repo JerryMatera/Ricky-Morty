@@ -9,10 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
-import io.github.jerrymatera.rickymorty.data.remote.models.dto.characters.CharacterDto
+import io.github.jerrymatera.rickymorty.domain.models.Character
 
 @Composable
-fun CharacterCard(character: CharacterDto) {
+fun CharacterCard(character: Character) {
     Row(
         modifier = Modifier.height(65.dp)
     ) {

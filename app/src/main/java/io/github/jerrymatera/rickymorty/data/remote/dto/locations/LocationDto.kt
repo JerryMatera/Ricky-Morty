@@ -1,4 +1,4 @@
-package io.github.jerrymatera.rickymorty.data.remote.models.dto.locations
+package io.github.jerrymatera.rickymorty.data.remote.dto.locations
 
 data class LocationDto(
     val created: String,
