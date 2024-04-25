@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-fun CharactersScreen(state: CharacterScreenState) {
+fun CharactersScreen(state: CharacterScreenUIState) {
     LazyColumn(
         modifier = Modifier.fillMaxSize()
     ) {

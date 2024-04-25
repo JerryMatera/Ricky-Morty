@@ -5,23 +5,7 @@ import io.github.jerrymatera.rickymorty.data.remote.dto.characters.CharactersRes
 import io.github.jerrymatera.rickymorty.domain.models.Character
 import io.github.jerrymatera.rickymorty.domain.models.CharactersResponse
 import io.github.jerrymatera.rickymorty.domain.models.NameUrlItem
-
-fun Character.toCharacterDto(): CharacterDto {
-    return CharacterDto(
-        created = created,
-        episode = episode,
-        gender = gender,
-        id = id,
-        image = image,
-        location = NameUrlItem(name = location.name, url = location.url),
-        name = name,
-        origin = NameUrlItem(name = origin.name, url = origin.url),
-        species = species,
-        status = status,
-        type = type,
-        url = url
-    )
-}
+import io.github.jerrymatera.rickymorty.domain.models.PaginatedTResponse
 
 fun CharacterDto.toCharacter(): Character {
     return Character(
@@ -42,4 +26,8 @@ fun CharacterDto.toCharacter(): Character {
 
 fun CharactersResponseDto.toCharacterResponse(): CharactersResponse {
     return CharactersResponse(info = info, results = results.map { it.toCharacter() })
+}
+
+fun PaginatedTResponse<CharacterDto>.toCharacterResponse(): PaginatedTResponse<Character> {
+    return PaginatedTResponse(info = info, results = results.map { it.toCharacter() })
 }

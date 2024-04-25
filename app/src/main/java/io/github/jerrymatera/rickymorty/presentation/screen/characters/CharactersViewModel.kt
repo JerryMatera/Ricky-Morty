@@ -17,8 +17,8 @@ import javax.inject.Inject
 class CharactersViewModel @Inject constructor(
     private val charactersRepository: CharactersRepository
 ) : ViewModel() {
-    private val _charactersScreenUiState = MutableStateFlow(CharacterScreenState())
-    val charactersScreenState: StateFlow<CharacterScreenState> =
+    private val _charactersScreenUiState = MutableStateFlow(CharacterScreenUIState())
+    val charactersScreenState: StateFlow<CharacterScreenUIState> =
         _charactersScreenUiState.asStateFlow()
 
     private fun charactersResponse() = viewModelScope.launch(Dispatchers.IO) {
