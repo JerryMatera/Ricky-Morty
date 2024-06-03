@@ -1,14 +1,14 @@
 [versions]
-agp = "8.3.2"
+agp = "8.4.1"
 hiltNavigationCompose = "1.2.0"
-kotlin = "1.9.20"
-coreKtx = "1.12.0"
+kotlin = "2.0.0"
+coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.1.5"
 espressoCore = "3.5.1"
-lifecycleRuntimeKtx = "2.7.0"
-activityCompose = "1.8.2"
-composeBom = "2024.04.00"
+lifecycleRuntimeKtx = "2.8.1"
+activityCompose = "1.9.0"
+composeBom = "2024.05.00"
 coilCompose = "2.6.0"
 converterMoshi = "2.11.0"
 coreSplashscreen = "1.0.1"
@@ -16,10 +16,9 @@ hiltAndroid = "2.51.1"
 loggingInterceptor = "5.0.0-alpha.12"
 moshiKotlin = "1.15.1"
 navVersion = "2.7.7"
-pagingCompose = "3.2.1"
+pagingCompose = "3.3.0"
 sandwich = "2.0.6"
 kotlinxCoroutinesAndroid = "1.8.0"
-composeMaterial = "1.6.5"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -37,7 +36,6 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
-#compose-material ={group = "androidx.compose.material",name="material" ,version.ref = "composeMaterial"}
 
 
 androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "pagingCompose" }
@@ -60,3 +58,4 @@ androidApplication = {id = "com.android.application", version.ref = "agp"}
 androidLibrary = {id = "com.android.library", version.ref = "agp"}
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 hiltAdroidPlugin = {id = "com.google.dagger.hilt.android", version.ref = "hiltAndroid"}
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
