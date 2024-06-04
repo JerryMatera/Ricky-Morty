@@ -1,11 +1,9 @@
 package io.github.jerrymatera.rickymorty.data.mapper
 
 import io.github.jerrymatera.rickymorty.data.remote.dto.characters.CharacterDto
-import io.github.jerrymatera.rickymorty.data.remote.dto.characters.CharactersResponseDto
 import io.github.jerrymatera.rickymorty.domain.models.Character
-import io.github.jerrymatera.rickymorty.domain.models.CharactersResponse
 import io.github.jerrymatera.rickymorty.domain.models.NameUrlItem
-import io.github.jerrymatera.rickymorty.domain.models.PaginatedTResponse
+import io.github.jerrymatera.rickymorty.domain.models.PaginatedResponse
 
 fun CharacterDto.toCharacter(): Character {
     return Character(
@@ -24,10 +22,7 @@ fun CharacterDto.toCharacter(): Character {
     )
 }
 
-fun CharactersResponseDto.toCharacterResponse(): CharactersResponse {
-    return CharactersResponse(info = info, results = results.map { it.toCharacter() })
-}
 
-fun PaginatedTResponse<CharacterDto>.toCharacterResponse(): PaginatedTResponse<Character> {
-    return PaginatedTResponse(info = info, results = results.map { it.toCharacter() })
+fun PaginatedResponse<CharacterDto>.toCharacterResponse(): PaginatedResponse<Character> {
+    return PaginatedResponse(info = info, results = results.map { it.toCharacter() })
 }

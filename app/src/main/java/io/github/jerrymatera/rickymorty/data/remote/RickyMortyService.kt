@@ -1,18 +1,19 @@
 package io.github.jerrymatera.rickymorty.data.remote
 
 import com.skydoves.sandwich.ApiResponse
-import io.github.jerrymatera.rickymorty.data.remote.dto.characters.CharactersResponseDto
-import io.github.jerrymatera.rickymorty.data.remote.dto.episodes.EpisodeResponseDto
-import io.github.jerrymatera.rickymorty.data.remote.dto.locations.LocationResponseDto
+import io.github.jerrymatera.rickymorty.data.remote.dto.characters.CharacterDto
+import io.github.jerrymatera.rickymorty.data.remote.dto.episodes.EpisodeDto
+import io.github.jerrymatera.rickymorty.data.remote.dto.locations.LocationDto
+import io.github.jerrymatera.rickymorty.domain.models.PaginatedResponse
 import retrofit2.http.GET
 
 interface RickyMortyService {
     @GET("character")
-    suspend fun getCharacters() : ApiResponse<CharactersResponseDto>
+    suspend fun getCharacters() : ApiResponse<PaginatedResponse<CharacterDto>>
 
     @GET("location")
-    suspend fun getLocations() : ApiResponse<LocationResponseDto>
+    suspend fun getLocations() : ApiResponse<PaginatedResponse<LocationDto>>
 
     @GET("episode")
-    suspend fun getEpisodes(): ApiResponse<EpisodeResponseDto>
+    suspend fun getEpisodes(): ApiResponse<PaginatedResponse<EpisodeDto>>
 }

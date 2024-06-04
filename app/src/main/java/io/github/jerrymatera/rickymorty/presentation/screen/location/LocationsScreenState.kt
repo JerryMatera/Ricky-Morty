@@ -1,9 +1,9 @@
 package io.github.jerrymatera.rickymorty.presentation.screen.location
 
-import io.github.jerrymatera.rickymorty.data.remote.dto.locations.LocationDto
+import io.github.jerrymatera.rickymorty.domain.models.Location
 
 data class LocationsScreenState(
-    val locationResponse: List<LocationDto>? = emptyList(),
+    val locationResponse: List<Location>? = emptyList(),
     val isLoading: Boolean = false,
     val error: String? = null
 )
