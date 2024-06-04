@@ -27,33 +27,19 @@ fun CharacterCard(character: Character) {
             AsyncImage(
                 model = character.image,
                 contentScale = ContentScale.FillWidth,
-                contentDescription = ""
+                contentDescription = "",
             )
             Column(
-                modifier = Modifier.padding(vertical = 16.dp, horizontal = 8.dp)
+                modifier = Modifier.padding(8.dp)
             ) {
-                Text(
-                    text = character.name
-                )
-                Text(
-                    text = "${character.status} - ${character.species}"
-                )
-                Spacer(modifier = Modifier.height(24.dp))
-                Text(
-                    text = "Last known location: "
-                )
-                Text(
-                    text = character.location.name
-                )
-                Spacer(
-                    modifier = Modifier.height(24.dp)
-                )
-                Text(
-                    text = "First seen in:"
-                )
-                Text(
-                    text = " ${character.episode.first()}"
-                )
+                Text(text = character.name)
+                Text(text = "${character.status} - ${character.species}")
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(text = "Last known location: ")
+                Text(text = character.location.name)
+                Spacer(modifier = Modifier.height(4.dp))
+                Text(text = "First seen in:")
+                Text(text = "Episode ${character.episode.first().split("/").last()}")
             }
         }
     }
@@ -72,12 +58,10 @@ private fun CharacterCardPrev() {
                 type = "Greebybobe",
                 gender = "unknown",
                 origin = NameUrlItem(
-                    name = "Girvonesk",
-                    url = "https://rickandmortyapi.com/api/location/68"
+                    name = "Girvonesk", url = "https://rickandmortyapi.com/api/location/68"
                 ),
                 location = NameUrlItem(
-                    name = "Worldender's lair",
-                    url = "https://rickandmortyapi.com/api/location/4"
+                    name = "Worldender's lair", url = "https://rickandmortyapi.com/api/location/4"
                 ),
                 image = "https://rickandmortyapi.com/api/character/avatar/395.jpeg",
                 episode = listOf(
